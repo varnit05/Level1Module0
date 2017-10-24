@@ -1,5 +1,6 @@
+
 // Copyright Wintriss Technical Schools 2013
-package graphical;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -56,14 +57,14 @@ public class Jeopardy implements ActionListener {
 		String answer = JOptionPane.showInputDialog("What is ?");
 		if (answer.equals("yes"))
 			score++;
-		((JButton)arg0.getSource()).setText("");
+		((JButton) arg0.getSource()).setText("");
 		update();
-		
+
 	}
 
 	private void update() {
-		scoreBox.setText(""+score);
-		
+		scoreBox.setText("" + score);
+
 	}
 
 }

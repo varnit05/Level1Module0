@@ -1,25 +1,23 @@
 
 public class Smurfs {
 
+	/*
+	 * 1. Watch this smurf cartoon: https://www.youtube.com/watch?v=RqbpzEHuO2g 2.
+	 * In a Runner class, make a Handy Smurf. Use the methods below to make him eat,
+	 * and print his name.
+	 * 
+	 * 5. Make a Papa Smurf and print his name, hat color and girl or boy. 6. Make a
+	 * Smurfette and print her name, hat color and girl or boy.
+	 */
+	public static void main(String[] args) {
 
-/* 
- * 1. Watch this smurf cartoon: https://www.youtube.com/watch?v=RqbpzEHuO2g
- * 2. In a Runner class, make a Handy Smurf. Use the methods below to make him eat, and print his name.
- * 
- * 5. Make a Papa Smurf and print his name, hat color and girl or boy.
- * 6. Make a Smurfette and print her name, hat color and girl or boy. */
-public static void main(String[] args) {
-	  
-Smurfs Handysmurf= new Smurfs("Handysmurf");
-	Handysmurf.eat();
-	Handysmurf.getName();
-	
-	Smurfs papasmurf = new Smurfs("")
-	
-	
-	
-	
-}
+		Smurfs Handysmurf = new Smurfs("Handysmurf");
+		Handysmurf.eat();
+		Handysmurf.getName();
+
+		Smurfs papasmurf = new Smurfs("papasmurf");
+
+	}
 
 	private String name;
 
@@ -27,7 +25,6 @@ Smurfs Handysmurf= new Smurfs("Handysmurf");
 		this.name = name;
 
 	}
-	
 
 	public String getName() {
 		return "My name is " + name + " Smurf.";
@@ -50,5 +47,3 @@ Smurfs Handysmurf= new Smurfs("Handysmurf");
 	}
 
 }
-
-
