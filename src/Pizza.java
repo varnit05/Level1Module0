@@ -59,4 +59,38 @@ public class Pizza {
 		this.price = price;
 	}
 
+	public boolean isHealthy() {
+
+		if (this.size == "small") {
+			if (this.calories <= 500) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (this.size == "medium") {
+			if (this.calories <= 1000) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (this.size == "large") {
+			if (this.calories <= 1500) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (this.size == "xtralarge") {
+			if (this.calories <= 2000) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
 }
