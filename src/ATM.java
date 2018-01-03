@@ -13,19 +13,23 @@ public class ATM implements ActionListener {
 		Atm.run();
 
 	}
-
+	double total = 100;
 	JFrame frame = new JFrame("ATM");
 	JPanel panel = new JPanel();
 	JPanel panel1 = new JPanel();
 	JPanel panel2 = new JPanel();
 	JTextField Depfield = new JTextField("Deposit");
 	JTextField Withfield = new JTextField("Withdraw");
-	JTextField Available = new JTextField("Available:$100");
+	JTextField Available = new JTextField("Available:$" + total);
 	JButton Dep = new JButton("Amount");
 	JButton With = new JButton("Amount");
 	JPanel Main = new JPanel();
+	
+	
 
 	public void run() {
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		panel.add(Depfield);
 
@@ -67,6 +71,8 @@ public class ATM implements ActionListener {
 		frame.pack();
 
 		Main.setLayout(new BoxLayout(Main, BoxLayout.Y_AXIS));
+		
+
 
 	}
 
@@ -75,16 +81,21 @@ public class ATM implements ActionListener {
 		// TODO Auto-generated method stub
 		String Depositamount = Depfield.getText();
 		String Withdrawamount = Withfield.getText();
+
 		
+		if(e.getSource() == Dep) {
+		System.out.println(Dep);
 		double DepositNum = Double.parseDouble(Depositamount);
+		total = total + DepositNum;
+		Available.setText("Available:$" + total);
+		}
+		
+		if(e.getSource() == With) {
+		System.out.println(With);
 		double Withdrawnum  = Double.parseDouble(Withdrawamount);
-		
-		if(e.getSource() == ) {
-		double ans = DepositNum - Withdrawnum;
-		if (Dep.)) {
-			
+		total = total - Withdrawnum;
+		Available.setText("Available:$" + total);
 		}
-		
-		}
+
 	}
 }
