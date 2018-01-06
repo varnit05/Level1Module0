@@ -1,14 +1,35 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class ChuckleClicker {
+public class ChuckleClicker implements ActionListener {
 public static void main(String[] args) {
-	
+	ChuckleClicker chuck = new ChuckleClicker();
+	chuck.makeButtons();
 }
 
 public void makeButtons() {
+	
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
+	JButton joke = new JButton ();
+	JButton punchline = new JButton();
+	panel.add(punchline);
+	panel.add(joke);
+	frame.add(panel);
+	joke.setText("joke");
+	punchline.setText("punchline");
+	frame.setVisible(true);
+	frame.pack();
+	joke.addActionListener(this);
+	punchline.addActionListener(this);
+	
+	
+	
 	
 //Make a ChuckleClicker class, a main method and a makeButtons method. Put a pop-up in the makeButtons method and get it working. You will need to instantiate your class and call method an instance of it. 
 //
@@ -25,5 +46,11 @@ public void makeButtons() {
 //You might need to move the declaration of your buttons above the the makeButtons() method.
 //
 //Use JOptionPane to print the joke or the punchline depending on which button was clicked.
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+JOptionPane.showMessageDialog(null, "hi");
 }
 }
