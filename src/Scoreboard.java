@@ -28,8 +28,6 @@ public class Scoreboard {
 	JButton HomeScoreButton = new JButton();
 	JButton HomeName = new JButton("Home");
 	JButton VisitorName = new JButton("Visitor");
-	
-
 
 	int HomeScore;
 	int VisitorScore;
@@ -39,7 +37,6 @@ public class Scoreboard {
 	int VistorTimeouts;
 
 	public Scoreboard() {
-
 
 		this.HomeFouls = 0;
 		HomeFoulsLabel.setText(" Fouls: " + Integer.toString(this.HomeFouls));
@@ -68,33 +65,52 @@ public class Scoreboard {
 		HomePanel.setLayout(new BorderLayout());
 		VisitorPanel.setLayout(new BorderLayout());
 		HomeFoulsPanel.setLayout(new BorderLayout());
-        VisitorFoulsPanel.setLayout(new BorderLayout());
-		
-		VisitorPanel.add(VisitorName,BorderLayout.NORTH);
-		VisitorPanel.add(VisitorScoreButton,BorderLayout.CENTER);
-		VisitorPanel.add(VisitorFoulsPanel,BorderLayout.SOUTH);
-		VisitorFoulsPanel.add(VisitorTimeoutsLabel,BorderLayout.WEST);
-		VisitorFoulsPanel.add(VisitorFoulsLabel,BorderLayout.EAST);
+		VisitorFoulsPanel.setLayout(new BorderLayout());
 
-		HomePanel.add(HomeName,BorderLayout.NORTH);
-		HomePanel.add(HomeScoreButton,BorderLayout.CENTER);
+		VisitorPanel.add(VisitorName, BorderLayout.NORTH);
+		VisitorPanel.add(VisitorScoreButton, BorderLayout.CENTER);
+		VisitorPanel.add(VisitorFoulsPanel, BorderLayout.SOUTH);
+		VisitorFoulsPanel.add(VisitorTimeoutsLabel, BorderLayout.WEST);
+		VisitorFoulsPanel.add(VisitorFoulsLabel, BorderLayout.EAST);
+
+		HomePanel.add(HomeName, BorderLayout.NORTH);
+		HomePanel.add(HomeScoreButton, BorderLayout.CENTER);
 		HomePanel.add(HomeFoulsPanel, BorderLayout.SOUTH);
-		HomeFoulsPanel.add(HomeTimeoutsLabel,BorderLayout.WEST);
-		HomeFoulsPanel.add(HomeFoulsLabel,BorderLayout.EAST);
-		
+		HomeFoulsPanel.add(HomeTimeoutsLabel, BorderLayout.WEST);
+		HomeFoulsPanel.add(HomeFoulsLabel, BorderLayout.EAST);
 
-		
-	
-		MainPanel.add(HomePanel,BorderLayout.WEST);
-		MainPanel.add(VisitorPanel,BorderLayout.EAST);
-		
+		MainPanel.add(HomePanel, BorderLayout.WEST);
+		MainPanel.add(VisitorPanel, BorderLayout.EAST);
+
 		frame.add(MainPanel);
 
 		frame.setVisible(true);
 		frame.pack();
 
 	}
+
 	public void setHomeScore(int Score) {
-		this.HomeScore = Score;
+		this.HomeScore += Score;
+	}
+
+
+	public void setVisitorScore(int Score) {
+		this.VisitorScore += Score;
+	}
+
+	public void setHomeFouls(int Score) {
+		this.HomeFouls += Score;
+	}
+
+	public void setVisitorFouls(int Score) {
+		this.Visitorfouls += Score;
+	}
+
+	public void setHomeTimouts(int Score) {
+		this.HomeTimouts += Score;
+	}
+
+	public void setVistorTimeouts(int Score) {
+		this.VistorTimeouts += Score;
 	}
 }
