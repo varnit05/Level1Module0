@@ -1,9 +1,11 @@
+import java.awt.BorderLayout;
 import java.awt.Component;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class ControlPanel {
 
@@ -19,39 +21,52 @@ public class ControlPanel {
 	JPanel VisitorPanel = new JPanel();
 
 	JPanel HomePanel = new JPanel();
+	
+	JPanel HomeTimeoutsPanel = new JPanel();
+	
+	JPanel VisitorTimeoutsPanel = new JPanel();
 
 	JPanel MainPanel = new JPanel();
-
-	JLabel VisitorFoulsLabel = new JLabel();
-	JLabel VisitorTimeoutsLabel = new JLabel();
-
-	JLabel HomeTimeoutsLabel = new JLabel();
-	JLabel HomeFoulslabel = new JLabel();
 	
-	JLabel HomePointsLabel = new JLabel();
-	JLabel VisitorPointsLabel = new JLabel();
-
-	JButton HomeName = new JButton("Home");
-	JButton VisitorName = new JButton("Visitor");
-
-	JButton VisitorPointsPlus1 = new JButton();
-	JButton VisitorPointsMinus1 = new JButton();
-	JButton HomePointsPlus1 = new JButton();
-	JButton HomePointsMinus1 = new JButton();
 	
-	JButton VisitorTimeoutsPlus1 = new JButton();
-	JButton HomeTimeoutsPlus1 = new JButton();
-	JButton VisitorTimeoutsMinus1 = new JButton();
-	JButton HomeTimeoutsMinus1 = new JButton();
+
+	JLabel VisitorFoulsLabel = new JLabel("Visitor Fouls:");
+	JLabel VisitorTimeoutsLabel = new JLabel("Visitor Timeouts:");
+
+	JLabel HomeTimeoutsLabel = new JLabel("Home Timeouts:");
+	JLabel HomeFoulslabel = new JLabel("Home Fouls:");
 	
-	JButton VisitorFoulsPlus1 = new JButton();
-	JButton HomeFoulsMinus1 = new JButton();
-	JButton VisitorFoulsMinus1 = new JButton();
-	JButton HomeFoulsPlus1 = new JButton();
+	JLabel HomePointsLabel = new JLabel("Home Points:");
+	JLabel VisitorPointsLabel = new JLabel("Visitor Points:");
+
+	JTextField HomeName = new JTextField("Home:");
+	JTextField VisitorName = new JTextField("Visitor:");
+
+	JButton VisitorPointsPlus1 = new JButton("+1");
+	JButton VisitorPointsMinus1 = new JButton("-1");
+	JButton HomePointsPlus1 = new JButton("+1");
+	JButton HomePointsMinus1 = new JButton("-1");
+	
+	JButton VisitorTimeoutsPlus1 = new JButton("+1");
+	JButton HomeTimeoutsPlus1 = new JButton("+1");
+	JButton VisitorTimeoutsMinus1 = new JButton("-1");
+	JButton HomeTimeoutsMinus1 = new JButton("-1");
+	
+	JButton VisitorFoulsPlus1 = new JButton("+1");
+	JButton HomeFoulsMinus1 = new JButton("-1");
+	JButton VisitorFoulsMinus1 = new JButton("-1");
+	JButton HomeFoulsPlus1 = new JButton("+1");
 
 	public void run() {
+
+		MainPanel.setLayout(new BorderLayout());
+		HomePanel.setLayout(new BorderLayout());
+		VisitorPanel.setLayout(new BorderLayout());
+	    HomeTimeoutsPanel.setLayout(new BorderLayout());
+	    VisitorTimeoutsPanel.setLayout(new BorderLayout());
+	    
+		
 		VisitorPanel.add(VisitorFoulsLabel);
-		VisitorPanel.add(VisitorTimeoutsLabel);
 		VisitorPanel.add(VisitorPointsLabel);
 		VisitorPanel.add(VisitorName);
 		
@@ -70,7 +85,6 @@ public class ControlPanel {
 		
 		
 		HomePanel.add(HomeFoulslabel);
-		HomePanel.add(HomeTimeoutsLabel);
 		HomePanel.add(HomePointsLabel);
 		HomePanel.add(HomeName);
 		
@@ -84,12 +98,37 @@ public class ControlPanel {
 		HomePanel.add(HomePointsPlus1);
 		HomePanel.add(HomePointsMinus1);
 		
+		HomeTimeoutsPanel.add(HomeTimeoutsLabel);
+		VisitorTimeoutsPanel.add(VisitorTimeoutsLabel);
+		
 		MainPanel.add(HomePanel);
+		MainPanel.add(HomeTimeoutsPanel);
+		MainPanel.add(VisitorTimeoutsPanel);
 		MainPanel.add(VisitorPanel);
 		
 		frame.add(MainPanel);
 		
 		frame.setVisible(true);
+		
+		
+		VisitorPanel.add(VisitorName, BorderLayout.NORTH);
+		VisitorPanel.add(VisitorPointsLabel, BorderLayout.CENTER);
+		VisitorPanel.add(VisitorFoulsLabel, BorderLayout.SOUTH);
+		
+		MainPanel.add(VisitorTimeoutsPanel, BorderLayout.SOUTH);
+		
+		HomePanel.add(HomeName, BorderLayout.NORTH);
+		HomePanel.add(HomePointsLabel, BorderLayout.CENTER);
+		HomePanel.add(HomeFoulslabel, BorderLayout.SOUTH);
+		
+
+		
+		MainPanel.add(HomePanel, BorderLayout.WEST);
+		MainPanel.add(VisitorPanel, BorderLayout.EAST);
+		MainPanel.add(VisitorTimeoutsPanel, BorderLayout.WEST);
+		MainPanel.add(HomeTimeoutsPanel, BorderLayout.EAST);
+		
+		MainPanel.add(HomeTimeoutsPanel, BorderLayout.SOUTH);
 		
 		frame.pack();
 }
